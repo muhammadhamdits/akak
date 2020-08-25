@@ -1,0 +1,28 @@
+.card{
+    height: 100vh;
+}
+.card-body{
+    overflow-y: scroll;
+    /* overflow-x: hidden; */
+}
+*::-webkit-scrollbar {
+    width: 12px;
+}
+*::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.05);
+}
+*::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 20px;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+.indeks{
+    display: none;
+}
+.dataTables_filter {
+    float: left !important;
+}
+.none{
+    border: none; 
+    background: transparent !important;
+}

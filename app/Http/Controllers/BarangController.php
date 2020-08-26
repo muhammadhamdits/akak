@@ -25,7 +25,7 @@ class BarangController extends Controller
 
     public function store(Request $request)
     {
-        if($request->file('foto')->isValid()){
+        if($request->hasFile('foto')){
             $file = $request->file('foto');
             $nama_file = time()."_".$file->getClientOriginalName();
             $tujuan_upload = 'img';
@@ -43,6 +43,7 @@ class BarangController extends Controller
             'foto' => $nama_file
         ]);
 
+        toastr()->success("Berhasil menambah barang $request->nama");
         return redirect(route('index'));
     }
 
@@ -80,6 +81,8 @@ class BarangController extends Controller
             'disc' => $request->disc,
             'foto' => $nama_file
         ]);
+
+        toastr()->success("Berhasil mengedit barang $barang->nama");
         return redirect(route('index'));
     }
 
@@ -87,7 +90,8 @@ class BarangController extends Controller
     {
         $data = Barang::findOrFail($barang->id);
         $data->delete();
-        unlink(public_path('img/'.$barang->foto));
+        unlink(public_path('img/'.$barang->foto),0777);
+        toastr()->success("Berhasil menghapus barang $barang->nama");
         return redirect(route('index'));
     }
 }

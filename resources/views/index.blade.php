@@ -3,7 +3,7 @@
 @section('content')
 <div class="row content">
     <div class="col-12" id="tabelBarang" style="display: none">
-        <a class="btn btn-primary float-right mb-3" href="{{ route('barang.create') }}">Tambah Data</a>
+        <a class="btn btn-primary float-right mb-3" href="{{ route('barang.create') }}"><i class="fa fa-plus mr-1"></i> Tambah Data</a>
         <table class="table">
             <thead>
                 <tr>
@@ -33,7 +33,7 @@
         </table>
     </div>
     <div class="col-12" id="tabelBrand" style="display: none">
-        <a class="btn btn-primary float-right mb-3" href="{{ route('brand.create') }}">Tambah Data</a>
+        <a class="btn btn-primary float-right mb-3" href="{{ route('brand.create') }}"><i class="fa fa-plus mr-1"></i> Tambah Data</a>
         <table class="table">
             <thead>
                 <tr>

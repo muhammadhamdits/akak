@@ -7,6 +7,7 @@
 
     <!-- Css -->
     <script src="{{ url('js/jquery-3.5.1.min.js') }}"></script>
+    @toastr_css
     <link rel="stylesheet" href="{{ url('css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ url('css/datatables.min.css') }}">
     <link rel="stylesheet" href="{{ url('css/style.css') }}">
@@ -24,17 +25,17 @@
             <div class="col align-self-center">
                 <div class="card">
                     <div class="card-header text-center">
-                        <button class="btn btn-sm btn-light float-left indeks kiri"><b><</b></button>
+                        <button class="btn btn-sm btn-light float-left indeks kiri"><b><i class="fa fa-arrow-left"></i></b></button>
                         <b class="judul">{{ $judul }}</b>
-                        <button class="btn btn-sm btn-light float-right indeks kanan"><b>></b></button>
+                        <button class="btn btn-sm btn-light float-right indeks kanan"><b><i class="fa fa-arrow-right"></i></b></button>
                     </div>
                     <div class="card-body">
                         @yield('content')
                     </div>
                     <div class="card-footer text-center">
-                        <button class="btn btn-sm btn-light float-left indeks kiri"><b><</b></button>
+                        <button class="btn btn-sm btn-light float-left indeks kiri"><b><i class="fa fa-arrow-left"></i></b></button>
                         Copyright &copy 2020 <a target="_blank" href="https://github.com/muhammadhamdits">Hamdi</a>
-                        <button class="btn btn-sm btn-light float-right indeks kanan"><b>></b></button>
+                        <button class="btn btn-sm btn-light float-right indeks kanan"><b><i class="fa fa-arrow-right"></i></b></button>
                     </div>
                 </div>
             </div>
@@ -49,5 +50,7 @@
     <!-- End Js -->
 
 </body>
+    @toastr_js
+    @toastr_render
 
 </html>

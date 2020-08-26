@@ -1,0 +1,47 @@
+<?php
+
+return [
+    // Limit the number of displayed toasts
+    'maxItems' => null,
+
+    'options' => [
+        'closeButton'       => true,
+        'closeClass'        => 'toastr-close-button',
+        'closeDuration'     => 300,
+        'closeEasing'       => 'swing',
+        'closeHtml'         => '<button><i class="icon-off"></i></button>',
+        'closeMethod'       => 'fadeOut',
+        'closeOnHover'      => true,
+        'containerId'       => 'toastr-container',
+        'debug'             => false,
+        'escapeHtml'        => false,
+        'extendedTimeOut'   => 10000,
+        'hideDuration'      => 1000,
+        'hideEasing'        => 'linear',
+        'hideMethod'        => 'fadeOut',
+        'iconClass'         => 'toastr-info',
+        'iconClasses'       => [
+            'error'   => 'toastr-error',
+            'info'    => 'toastr-info',
+            'success' => 'toastr-success',
+            'warning' => 'toastr-warning',
+        ],
+        'messageClass'      => 'toastr-message',
+        'newestOnTop'       => false,
+        'onHidden'          => null,
+        'onShown'           => null,
+        'positionClass'     => 'toastr-top-right',
+        'preventDuplicates' => true,
+        'progressBar'       => true,
+        'progressClass'     => 'toastr-progress',
+        'rtl'               => false,
+        'showDuration'      => 300,
+        'showEasing'        => 'swing',
+        'showMethod'        => 'fadeIn',
+        'tapToDismiss'      => true,
+        'target'            => 'body',
+        'timeOut'           => 5000,
+        'titleClass'        => 'toastr-title',
+        'toastClass'        => 'toastr',
+    ],
+];

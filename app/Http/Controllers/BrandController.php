@@ -21,6 +21,7 @@ class BrandController extends Controller
     public function store(Request $request)
     {
         Brand::create($request->all());
+        toastr()->success("Berhasil menambah brand $request->nama");
         return redirect(route('index'));
     }
 
@@ -39,13 +40,20 @@ class BrandController extends Controller
     {
         $data = Brand::findOrFail($brand->id);
         $data->update(['nama' => $request->nama]);
+        toastr()->success("Berhasil mengedit brand");
         return redirect(route('index'));
     }
     
     public function destroy(Brand $brand)
     {
-        $data = Brand::findOrFail($brand->id);
-        $data->delete();
-        return redirect(route('index'));
+        try {
+            $data = Brand::findOrFail($brand->id);
+            $data->delete();
+            toastr()->success("Berhasil menghapus brand $brand->nama");
+            return redirect(route('index'));
+        } catch (\Throwable $th) {
+            toastr()->error("Gagal menghapus brand $brand->nama");
+            return redirect(route('index'));
+        }
     }
 }
